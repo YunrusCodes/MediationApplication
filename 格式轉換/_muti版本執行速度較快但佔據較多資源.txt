@@ -1,0 +1,32 @@
+1.在"開始"搜尋"命令提示字元" (快速啟動: 輸入win -> 輸入cmd -> 輸入enter)
+2.複製python檔案路徑
+3.在命令提示字元中，輸入: python "python檔案路徑"
+  例如:
+
+----介面自下行開始--------
+
+Microsoft Windows [版本 10.0.22621.1555]
+(c) Microsoft Corporation. 著作權所有，並保留一切權利。
+
+C:\Users\Asus>python "C:\Users\Asus\Desktop\dealFiles\doc2docx_muti.py"
+
+----介面自此行結束--------
+
+4.輸入後按enter執行
+5.執行完畢後，可能會有失敗的檔案，可再次嘗試執行，若仍失敗，可能檔案已損毀
+
+doc2docx.py : 以單執行緒操作doc轉docx
+
+doc2docx_muti.py : 以多執行緒操作doc轉docx
+
+xls2xlsx : 以單執行緒操作xls轉xlsx
+
+xls2xlsx_muti.py : 以多執行緒操作xls轉xlsx
+
+parseFolderName.py : 解析所有此類目錄:
+1.調解筆錄020(聲請人李武陵)(對造人薛金花)(收：112刑016號)(開調解時間 112 年04月27日（二）上（二）上午9時 10 分)-(車禍傷害糾紛案)
+將所有解析到的資料存成excel表格
+
+recover_name.py : 嘗試恢復意外狀況發生後，未復原的檔名
+
+03to07.py : 執行doc2docx_muti.py與xls2xlsx_muti.py

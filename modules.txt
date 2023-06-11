@@ -1,0 +1,11 @@
+PyPDF2
+python-docx
+docx2pdf
+fpdf
+openpyxl
+pandas
+pymysql
+pythoncom
+sqlalchemy
+win32com
+xlwings
