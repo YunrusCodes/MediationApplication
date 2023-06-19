@@ -273,10 +273,15 @@ def update_case_data(existing_case, new_case):
 cases = {}
 def search_and_parse_files(file_type, pattern, parse_func):
     global cases
-    path = os.path.join(os.path.dirname(absPath),'格式轉換','請將欲處理文件備份後放入此處')
-    files = [os.path.join(root, file) for root, dirs, files in os.walk(path)
-             for file in files if re.search(pattern, file) and os.path.splitext(file)[1] == ".docx"]
-    for file in files:
+    path1 = os.path.join(os.path.dirname(absPath), '格式轉換', '請將欲處理文件備份後放入此處')
+    files1 = [os.path.join(root, file) for root, dirs, filenames in os.walk(path1)
+              for file in filenames if re.search(pattern, file) and os.path.splitext(file)[1] == ".docx"]
+
+    path2 = os.path.join(os.path.dirname(absPath), '通知書生成', '通知書輸出於此')
+    files2 = [os.path.join(root, file) for root, dirs, filenames in os.walk(path2)
+              for file in filenames if re.search(pattern, file) and os.path.splitext(file)[1] == ".docx"]
+    print(files1 + files2)
+    for file in files1 + files2:
         case = Case(file)
         parse_func(case)
         if case.case_number is not None and case.case_number.startswith(arg_year):
@@ -346,7 +351,7 @@ try:
                 "事由": value.case_reason,
                 "過程摘要": value.summary
             })
-        df = pd.DataFrame(data, columns = ['收件編號', '收件日期', '案號', '聲請人', '對造人', '事由', '過程摘要'])    
+        df = pd.DataFrame(data, columns = ['收件編號', '收件日期', '案號', '聲請人', '對造人', '事由', '過程摘要'])
         # 將 DataFrame 存成 xlsx 檔案
         with pd.ExcelWriter(path) as writer:
             df.to_excel(writer, index=False)
