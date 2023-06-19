@@ -352,7 +352,7 @@ try:
             for key, value in opponents.items():
                 Description_event = Description_event.replace(f'{{{key}}}', opponents[key])
                 Description_event = Description_event.replace(f'{{{key}車號}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車號']))
-                Description_event = Description_event.replace(f'{{{key}車輛}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車號']))
+                Description_event = Description_event.replace(f'{{{key}車輛}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車輛']))
             
             
             Description_event = Description_event.format(
@@ -369,7 +369,7 @@ try:
             for key, value in opponents.items():
                 Description_agreement = Description_agreement.replace(f'{{{key}}}', opponents[key])
                 Description_agreement = Description_agreement.replace(f'{{{key}車號}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車號']))
-                Description_agreement = Description_agreement.replace(f'{{{key}車輛}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車號']))
+                Description_agreement = Description_agreement.replace(f'{{{key}車輛}}', str(main_dict[caseNum+'/'+opponents[key]][1]['車輛']))
             Description_agreement = Description_agreement.format(
                 聲請人=applicant,
                 肇事時間=main_dict[caseNum+'/'+applicant][1]['肇事時間'],
